@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
 import { CnvrtPipe } from './cnvrt.pipe';
 import { PaginationComponent } from './pagination/pagination.component';
+import { ClassDirectiveDirective } from './class-directive.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
     CnvrtPipe,
-    PaginationComponent
+    PaginationComponent,
+    ClassDirectiveDirective
   ],
   imports: [
     BrowserModule,

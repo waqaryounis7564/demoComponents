@@ -6,20 +6,28 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  getPosts() {
-    return this.posts;
+  currentPage = 0;
+  currentPageIndex(ind: number) {
+    return Math.abs(this.currentPage - ind) < 5;
   }
-  show(value) {
-    console.log(value);
+  changePageUp() {
+    this.currentPage += 1;
   }
-  posts = [
-    { name: 'hassam waqar', age: 16, gender: 'male' },
-    { name: 'meerab bilal', age: 15, gender: 'female' },
-    { name: 'momal waqar', age: 11, gender: 'female' },
-    { name: 'eman', age: 12, gender: 'female' },
-    { name: 'eshal', age: 12, gender: 'female' },
-    { name: 'naffay', age: 12, gender: 'male' },
-    { name: 'jannat', age: 12, gender: 'female' },
-    { name: 'eman', age: 12, gender: 'female' },
+  changePageDown() {
+    this.currentPage -= 1;
+  }
+  images = [
+    {
+      image: 'car',
+      url:
+        'https://images.unsplash.com/photo-1489824904134-891ab64532f1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1189&q=80',
+    },
+    { image: 'bike', url: 'https://unsplash.com/photos/zGzXsJUBQfs' },
+    { image: 'plane', url: 'https://unsplash.com/photos/rf6ywHVkrlY' },
+    { image: 'ship', url: 'https://unsplash.com/photos/emH2e5SBifE' },
+    { image: 'apple', url: 'https://unsplash.com/photos/gDPaDDy6_WE' },
+    { image: 'banana', url: 'https://unsplash.com/photos/fczCr7MdE7U' },
+    { image: 'boy', url: 'https://unsplash.com/photos/zh-QHJg_da4' },
+    { image: 'kid', url: 'https://unsplash.com/photos/JfolIjRnveY' },
   ];
 }

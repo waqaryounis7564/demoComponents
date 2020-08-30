@@ -1,1 +1,30 @@
-<app-pagination></app-pagination>
+<nav aria-label="Page navigation example">
+  <ul class="pagination" appClassDirective>
+    <li class="page-item" [ngClass]="{ disabled: currentPage === 0 }">
+      <a (click)="changePageDown()" class="page-link" href="#">Previous</a>
+    </li>
+    <ng-container *ngFor="let item of images; let i = index">
+      <li
+        *ngIf="currentPageIndex(i)"
+        class="page-item"
+        [ngClass]="{ active: i === currentPage }"
+      >
+        {{ i }},{{ currentPage }}
+        <a (click)="currentPage = i" class="page-link" href="#">{{ i + 1 }}</a>
+      </li>
+    </ng-container>
+
+    <li
+      class="page-item"
+      [ngClass]="{ disabled: currentPage === images.length - 1 }"
+    >
+      <a (click)="changePageUp()" class="page-link" href="#">Next</a>
+    </li>
+  </ul>
+</nav>
+<div>
+  <h4>
+    {{ images[currentPage].image }}
+  </h4>
+</div>
+<app-card [url]="images[currentPage].url"></app-card>

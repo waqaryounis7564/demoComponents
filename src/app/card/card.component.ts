@@ -6,8 +6,10 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./card.component.css'],
 })
 export class CardComponent implements OnInit {
-  @Input() name = '';
-  constructor() {}
+  @Input() url: string;
+  constructor() {
+    // console.log('we' + this.url);
+  }
 
   ngOnInit(): void {}
 }
