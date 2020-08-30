@@ -7,7 +7,7 @@ export class ClassDirectiveDirective {
   constructor(private element: ElementRef) {
     console.log('hia');
   }
-  @Input() set color(col: string) {
+  @Input('appClassDirective') set color(col: string) {
     this.element.nativeElement.style.backgroundColor = col;
   }
 }
